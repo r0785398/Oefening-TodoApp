@@ -10,13 +10,8 @@ import { ToDoService } from '../Services/to-do.service';
 })
 export class ToDoListComponent implements OnInit {
 
-  // @Input() todos;
-
-   
-
-
-
-newTodo: ToDo = new ToDo();
+  newTodo: ToDo;
+  @Output() public childEvent = new EventEmitter();
 
   constructor(private todoService: ToDoService) {}
 
@@ -27,9 +22,6 @@ newTodo: ToDo = new ToDo();
     
   }
 
-  @Output() public childEvent = new EventEmitter();
-
-
   toggleTodoDone(todo){
     this.todoService.toggleTodoDone(todo)
     this.getTodosDone();
@@ -37,6 +29,7 @@ newTodo: ToDo = new ToDo();
 
   removeTodo(todo){
     this.todoService.deleteTodo(todo);
+    this.getTodosDone();
   }
 
   get todos(){

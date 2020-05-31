@@ -9,14 +9,12 @@ export class ToDo {
   Object.assign(this, values);
  }
 
- // constructor(id: number, titel: string, description: string ,done: boolean, wie: string, wat: string) {
+ // constructor(id: number, titel: string, description: string ,done: boolean) {
  //  console.log(titel);
  //  this.id = id;
  //  this.titel = titel || '';
  //  this.description = description || '';
  //  this.done = done || false;
- //  this.wie = wie || '';
- //  this.wat = wat || '';
  // }
 
 }

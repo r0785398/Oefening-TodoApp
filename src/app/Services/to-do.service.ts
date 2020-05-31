@@ -46,18 +46,18 @@ todos: ToDo[] = [
     return todoItem;
   }
 
-  // deleteToDo2(toDo: ToDo) {
-  //   const toDoId = this.toDoList.findIndex(i => i.id === toDo.id);
-  //   this.toDoList.splice(toDoId, 1);
-
-  //   return this.toDoList;
-  // }
-
   deleteTodo(toDo: ToDo) {
-    this.todos = this.todos.filter(t => t.id !== toDo.id);
+    const toDoId = this.todos.findIndex(i => i.id === toDo.id);
+    this.todos.splice(toDoId, 1);
 
-    return this;
+    return this.todos;
   }
+
+  // deleteTodo(toDo: ToDo) {
+  //   this.todos = this.todos.filter(t => t.id !== toDo.id);
+
+  //   return this;
+  // }
 
   getLastTodoId(){
     return this.todos[this.todos.length -1].id;
