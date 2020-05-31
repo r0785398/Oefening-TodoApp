@@ -50,7 +50,6 @@ newTodo: ToDo = new ToDo();
 
   ngOnInit(): void {
     // this.todos = this.todoService.getAllTodo();
-
   }
 
 }
