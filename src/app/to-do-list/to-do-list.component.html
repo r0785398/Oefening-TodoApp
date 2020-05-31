@@ -1,0 +1,29 @@
+
+  <h5>Todos</h5>
+  <!-- <label>Add todo's: </label> -->
+  <input #addTodo1 type="text" class="" placeholder="Nog een todo?" autofocus=""  (keyup.enter)="addTodo(addTodo1.value)">
+  <button (click)="addTodo(addTodo1.value)">Add todo's</button>
+  <!-- [(ngModel)]="newTodo.title" -->
+<!-- </header> -->
+<section class="main">
+  <ng-container *ngIf="todos.length > 0 ; else done">
+    
+      <ul class="todo-list">
+    <li *ngFor="let todo of todos">
+      <div class="view col-md-12">
+        <input class="toggle" type="checkbox" (click)="toggleTodoDone(todo)" [checked]="todo.done">
+        <label>   {{todo.titel}} </label>
+        <!-- <button class="destroy" (click)="removeTodo(todo)">Remove</button> -->
+      </div>
+    </li>
+  </ul>
+  </ng-container>
+  <ng-template #done>
+    <h3>Proficiat, alles gedaan!</h3>
+  </ng-template>
+
+</section>
+  <footer class="footer" *ngIf="todos.length > 0">
+    <span class="todo-count"><strong>{{todos.length}}x </strong>{{todos.length == 1 ? 'item' : 'items'}} left</span>
+  </footer>
+

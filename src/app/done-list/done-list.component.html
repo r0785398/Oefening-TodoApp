@@ -1,0 +1,10 @@
+<h5>Lijst wat al gedaan is!</h5>
+
+<ng-container *ngIf="doneList.length > 0; else nothingDoneYet">
+  <ul *ngFor="let done of doneList">
+    <li>{{ done.titel }}</li>
+  </ul>
+</ng-container>
+<ng-template #nothingDoneYet>
+  <h3>Je moet nog aan de slag!</h3>
+</ng-template>
